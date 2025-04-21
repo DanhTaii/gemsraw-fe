@@ -1,0 +1,26 @@
+.dictionary-search-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    padding: 5px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dictionary-search-form input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 8px 12px;
+    border-radius: 25px;
+}
+
+.dictionary-search-form .btn {
+    background: transparent;
+    border: none;
+    color: #007bff;
+    padding: 6px 10px;
+    cursor: pointer;
+}
