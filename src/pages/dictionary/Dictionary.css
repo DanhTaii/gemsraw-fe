@@ -24,3 +24,16 @@
     padding: 6px 10px;
     cursor: pointer;
 }
+
+.custom-blue {
+    color: #2c67a9;
+  }
+
+.navbar-brand.text-primary {
+    color: #2C67A9 !important;
+}
+  
+.nav-link.active {
+    color: #2C67A9 !important;
+    border-bottom: 2px solid #2C67A9;
+}
