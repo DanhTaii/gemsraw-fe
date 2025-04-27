@@ -1,8 +1,5 @@
-"use client"
-
 import { createContext, useContext, useState, useEffect } from "react"
 
-// Define the shape of our context
 const FlashcardContext = createContext(undefined)
 
 export function FlashcardProvider({ children }) {
@@ -17,7 +14,6 @@ export function FlashcardProvider({ children }) {
     const [currentSetId, setCurrentSetId] = useState(null)
     const [currentCardIndex, setCurrentCardIndex] = useState(0)
 
-    // Update localStorage when flashcard sets change
     useEffect(() => {
         localStorage.setItem("flashcardSets", JSON.stringify(flashcardSets))
     }, [flashcardSets])
@@ -85,7 +81,6 @@ export function FlashcardProvider({ children }) {
     return <FlashcardContext.Provider value={value}>{children}</FlashcardContext.Provider>
 }
 
-// Custom hook for using the flashcard context
 export function useFlashcards() {
     const context = useContext(FlashcardContext)
     if (context === undefined) {
