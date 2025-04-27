@@ -1,8 +1,5 @@
-"use client"
-
 import { createContext, useContext, useState } from "react"
 
-// Define the shape of our context
 const AppContext = createContext(undefined)
 
 export function AppProvider({ children }) {
@@ -50,10 +47,12 @@ export function AppProvider({ children }) {
         clearError,
     }
 
-    return <AppContext.Provider value={value}>{children}</AppContext.Provider>
+    return (
+        <AppContext.Provider value={value}>{children}</AppContext.Provider>
+    )
+
 }
 
-// Custom hook for using the app context
 export function useApp() {
     const context = useContext(AppContext)
     if (context === undefined) {

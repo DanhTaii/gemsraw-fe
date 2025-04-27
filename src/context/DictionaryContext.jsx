@@ -1,8 +1,5 @@
-"use client"
-
 import { createContext, useContext, useState, useEffect } from "react"
 
-// Define the shape of our context
 const DictionaryContext = createContext(undefined)
 
 export function DictionaryProvider({ children }) {
@@ -17,12 +14,10 @@ export function DictionaryProvider({ children }) {
     const [searchTerm, setSearchTerm] = useState("")
     const [searchResults, setSearchResults] = useState([])
 
-    // Update localStorage when entries change
     useEffect(() => {
         localStorage.setItem("dictionaryEntries", JSON.stringify(entries))
     }, [entries])
 
-    // Update search results when search term or entries change
     useEffect(() => {
         if (!searchTerm.trim()) {
             setSearchResults(entries)
@@ -63,7 +58,6 @@ export function DictionaryProvider({ children }) {
     return <DictionaryContext.Provider value={value}>{children}</DictionaryContext.Provider>
 }
 
-// Custom hook for using the dictionary context
 export function useDictionary() {
     const context = useContext(DictionaryContext)
     if (context === undefined) {

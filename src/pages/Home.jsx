@@ -17,7 +17,7 @@ const Home = () => {
       <h2 className="mb-4 fw-bold custom-blue">Welcome!</h2>
 
       {/* Hàng trên - Dictionary và Mindmap */}
-      <div className="row justify-content-center mb-3">
+      <div className="row justify-content-center mb-3 g-0">
         {topItems.map((item) => (
           <div className="col-10 col-md-5 " key={item.title}>
             <Link to={item.path} className="text-decoration-none">
@@ -33,7 +33,7 @@ const Home = () => {
       </div>
 
       {/* Hàng dưới - Flashcard và Exercise */}
-      <div className="row justify-content-center">
+      <div className="row justify-content-center g-0">
         {bottomItems.map((item) => (
           <div className="col-10 col-md-5" key={item.title}>
             <Link to={item.path} className="text-decoration-none">
